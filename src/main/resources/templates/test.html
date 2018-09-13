@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<form th:action="@{/validateCode}" method="post">
+    <img src="/code">
+    <input type="text" name="code">
+    <button>submit</button>
+</form>
+</body>
+</html>

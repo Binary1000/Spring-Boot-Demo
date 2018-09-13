@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Work List</title>
+</head>
+<body>
+    <table>
+        <div th:each="work : ${works}">
+            <tr>
+                <td th:text="${work.date}"></td>
+                <td th:text="${work.day}"></td>
+                <td th:text="${work.morning}"></td>
+                <td th:text="${work.afternoon}"></td>
+                <td th:text="${work.evening}"></td>
+                <td th:text="${work.hworktime}"></td>
+                <td th:text="${work.price}"></td>
+            </tr>
+            <tr><td th:text="${work.summary}" colspan="5"></td></tr>
+        </div>
+    </table>
+    <style>
+        *{
+            text-align: center;
+        }
+    </style>
+</body>
+</html>

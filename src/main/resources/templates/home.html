@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Spring Security Example</title>
+</head>
+<body>
+<h1>Welcome!</h1>
+<div sec:authorize="!isAuthenticated()">
+    <h2>游客您好，请先<a th:href="@{/login}">登录</a></h2>
+</div>
+<div sec:authorize="isAuthenticated()">
+    <form th:action="@{/logout}" method="post">
+        <p sec:authentication="name"></p>
+        <p sec:authentication="principal.authorities"></p>
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+<div sec:authorize="hasRole('user')">
+    用户
+</div>
+<div sec:authorize="hasRole('vip')">
+    VIP
+</div>
+<div sec:pr></div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/work?useSSL=false
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+
+  messages:
+    basename: i18n.login
+
+  thymeleaf:
+    cache: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  redis:
+    host: 192.168.0.250
+
+  rabbitmq:
+    host: 192.168.0.250
+
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.0.250:9300
+
+student:
+  gender: male
+  name: Binary
